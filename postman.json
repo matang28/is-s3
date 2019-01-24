@@ -1,0 +1,424 @@
+{
+	"info": {
+		"_postman_id": "839b0567-8a0d-4634-959c-00a55a8b8779",
+		"name": "is-s3 API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get Metadata",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:8080/s3/:userId/files/:fileName?metadata=true",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"s3",
+						":userId",
+						"files",
+						":fileName"
+					],
+					"query": [
+						{
+							"key": "metadata",
+							"value": "true"
+						}
+					],
+					"variable": [
+						{
+							"key": "userId",
+							"value": "user1"
+						},
+						{
+							"key": "fileName",
+							"value": "aaa.zip"
+						}
+					]
+				},
+				"description": "\t"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Metadata with token",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:8080/s3/:userId/files/:fileName?metadata=true&accessToken=abc1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"s3",
+						":userId",
+						"files",
+						":fileName"
+					],
+					"query": [
+						{
+							"key": "metadata",
+							"value": "true"
+						},
+						{
+							"key": "accessToken",
+							"value": "abc1"
+						}
+					],
+					"variable": [
+						{
+							"key": "userId",
+							"value": "user1"
+						},
+						{
+							"key": "fileName",
+							"value": "aaa.zip"
+						}
+					]
+				},
+				"description": "\t"
+			},
+			"response": []
+		},
+		{
+			"name": "Download File",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:8080/s3/:userId/files/:fileName?metadata=false",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"s3",
+						":userId",
+						"files",
+						":fileName"
+					],
+					"query": [
+						{
+							"key": "metadata",
+							"value": "false"
+						}
+					],
+					"variable": [
+						{
+							"key": "userId",
+							"value": "user1"
+						},
+						{
+							"key": "fileName",
+							"value": "aaa.zip"
+						}
+					]
+				},
+				"description": "\t"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete File",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:8080/s3/:userId/files/:fileName",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"s3",
+						":userId",
+						"files",
+						":fileName"
+					],
+					"variable": [
+						{
+							"key": "userId",
+							"value": "user1"
+						},
+						{
+							"key": "fileName",
+							"value": "aaa.zip"
+						}
+					]
+				},
+				"description": "\t"
+			},
+			"response": []
+		},
+		{
+			"name": "Download File with token",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:8080/s3/:userId/files/:fileName?metadata=false&accessToken=abc1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"s3",
+						":userId",
+						"files",
+						":fileName"
+					],
+					"query": [
+						{
+							"key": "metadata",
+							"value": "false"
+						},
+						{
+							"key": "accessToken",
+							"value": "abc1"
+						}
+					],
+					"variable": [
+						{
+							"key": "userId",
+							"value": "user1"
+						},
+						{
+							"key": "fileName",
+							"value": "aaa.zip"
+						}
+					]
+				},
+				"description": "\t"
+			},
+			"response": []
+		},
+		{
+			"name": "Upload File",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "",
+							"description": "The file to be uploaded",
+							"type": "file",
+							"src": ""
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8080/s3/:userId/files/:fileName",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"s3",
+						":userId",
+						"files",
+						":fileName"
+					],
+					"variable": [
+						{
+							"key": "userId",
+							"value": "user1"
+						},
+						{
+							"key": "fileName",
+							"value": "aaa.zip"
+						}
+					]
+				},
+				"description": "\t"
+			},
+			"response": []
+		},
+		{
+			"name": "Set as private",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:8080/s3/:userId/files/:fileName/private",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"s3",
+						":userId",
+						"files",
+						":fileName",
+						"private"
+					],
+					"variable": [
+						{
+							"key": "userId",
+							"value": "user1"
+						},
+						{
+							"key": "fileName",
+							"value": "aaa.zip"
+						}
+					]
+				},
+				"description": "\t"
+			},
+			"response": []
+		},
+		{
+			"name": "Set as private with token",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:8080/s3/:userId/files/:fileName/private?accessToken=abc1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"s3",
+						":userId",
+						"files",
+						":fileName",
+						"private"
+					],
+					"query": [
+						{
+							"key": "accessToken",
+							"value": "abc1"
+						}
+					],
+					"variable": [
+						{
+							"key": "userId",
+							"value": "user1"
+						},
+						{
+							"key": "fileName",
+							"value": "aaa.zip"
+						}
+					]
+				},
+				"description": "\t"
+			},
+			"response": []
+		},
+		{
+			"name": "Set as public",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:8080/s3/:userId/files/:fileName/public",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"s3",
+						":userId",
+						"files",
+						":fileName",
+						"public"
+					],
+					"variable": [
+						{
+							"key": "userId",
+							"value": "user1"
+						},
+						{
+							"key": "fileName",
+							"value": "aaa.zip"
+						}
+					]
+				},
+				"description": "\t"
+			},
+			"response": []
+		},
+		{
+			"name": "Set as public with token",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:8080/s3/:userId/files/:fileName/public?accessToken=abc1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"s3",
+						":userId",
+						"files",
+						":fileName",
+						"public"
+					],
+					"query": [
+						{
+							"key": "accessToken",
+							"value": "abc1"
+						}
+					],
+					"variable": [
+						{
+							"key": "userId",
+							"value": "user1"
+						},
+						{
+							"key": "fileName",
+							"value": "aaa.zip"
+						}
+					]
+				},
+				"description": "\t"
+			},
+			"response": []
+		}
+	]
+}
