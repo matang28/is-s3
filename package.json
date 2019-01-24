@@ -25,7 +25,8 @@
   "scripts": {
     "clean": "rimraf build tmp",
     "build": "tsc -p tsconfig.json",
-    "build:watch": "tsc -w -p tsconfig.json"
+    "build:watch": "tsc -w -p tsconfig.json",
+    "start" : "node src/index.js"
   },
   "author": "Matan Golan",
   "license": "ISC"

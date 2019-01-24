@@ -1,5 +1,8 @@
 import {Entity, Repository} from "./Repository";
 
+/**
+ * A repository that holds Users.
+ */
 export class InMemUserRepository implements Repository<string, UserModel> {
 
     private storage = new Map<string, UserModel>();
@@ -23,6 +26,9 @@ export class InMemUserRepository implements Repository<string, UserModel> {
     }
 }
 
+/**
+ * The class which represents a User.
+ */
 export class UserModel extends Entity<string> {
 
     constructor(public id: string,

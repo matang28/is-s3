@@ -1,6 +1,9 @@
 import {Entity, Repository} from "./Repository";
 import {PermissionType} from "../utils/PermissionType";
 
+/**
+ * A repository that hold the file's metadata
+ */
 export class InMemFileMetadataRepository implements Repository<string, FileMetadataModel> {
 
     private storage = new Map<string, FileMetadataModel>();
@@ -21,6 +24,9 @@ export class InMemFileMetadataRepository implements Repository<string, FileMetad
 
 }
 
+/**
+ * The entity class which represents the metadata of a file
+ */
 export class FileMetadataModel extends Entity<string> {
 
     constructor(public id: string,

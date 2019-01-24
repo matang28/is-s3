@@ -2,6 +2,9 @@ import {InMemUserRepository, UserModel} from "./data/UserRepository";
 import {InMemFileMetadataRepository} from "./data/FileMetadataRepository";
 import {StorageService} from "./business/StorageService";
 
+/**
+ * This is an hacky and quick replacement for Dependency Injection container.
+ */
 export namespace DI {
 
     // This will simulate the user's DB

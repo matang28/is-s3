@@ -1,14 +1,17 @@
 import fileUpload = require("express-fileupload");
 
+/**
+ * Wrapping express and all of our middlewares
+ * into a singleton
+ */
 export namespace ExpressServer {
 
     const express = require('express');
-    var errorHandler = require('errorhandler');
+    const errorHandler = require('errorhandler');
     const app = express();
 
     app.use(fileUpload());
-
-    app.use(errorHandler(/*{ dumpExceptions: true, showStack: true }*/));
+    app.use(errorHandler());
 
     export function get(path: string, func: (request, response) => void) {
         app.get(path, func);
@@ -26,8 +29,12 @@ export namespace ExpressServer {
         app.delete(path, func);
     }
 
+    /**
+     * Starts the server and binding it to the specified port.
+     * @param {number} port the port to listen to incoming traffic.
+     * @returns {Promise<void>}
+     */
     export function start(port: number): Promise<void> {
-
         return new Promise<void>(_resolve => {
             app.listen(port, _resolve)
         });

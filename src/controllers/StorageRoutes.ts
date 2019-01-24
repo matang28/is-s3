@@ -4,6 +4,10 @@ import {Request, Response} from "express";
 import {PermissionType} from "../utils/PermissionType";
 import {UploadedFile} from "express-fileupload";
 
+/**
+ * The controller of storage related REST endpoints.
+ * @constructor
+ */
 export function StorageRoutes() {
 
     const storageService = DI.storageService;
